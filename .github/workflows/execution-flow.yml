@@ -78,6 +78,7 @@ jobs:
   report:
     runs-on: ubuntu-latest
     needs: [deploy,build,build,deploy]
+    if: failure()
     steps:
       - name: test report
         run: |
